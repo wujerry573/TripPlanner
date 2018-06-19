@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Trip Planner</title>
 
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0-beta.1/mapbox-gl.css' rel='stylesheet' />
+<head>
+  <title>Trip Planner</title>
 
-    <link rel="stylesheet" href="./style.css"></link>
-    <script src="./bundle.js" defer></script>
-  </head>
-  <body>
-    <div id="map"></div>
-  </body>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0-beta.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+  <link rel="stylesheet" href="./style.css"></link>
+  <script src="./bundle.js" defer></script>
+</head>
+
+<body>
+  <div class='nav-bar'>
+    <h2>TripPlanner</h2>
+    <ul>
+    </ul>
+  </div>
+  <div class='things-to-do'>
+    <h3>Hotels</h3>
+    <select name='hotel-selector'>
+      <option value='first'>First Value</option>
+      <option value='second'>Second Value</option>
+      <option value='third'>Third Value</option>
+    </select>
+  </div>
+  <div id="map"></div>
+</body>
+
 </html>
