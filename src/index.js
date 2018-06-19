@@ -1,5 +1,7 @@
-console.log('heyeyeyeyeyeyeyeyeyye');
+import { buildMarker } from './marker.js'
 
+
+// console.log(buildMarker)
 var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 
 mapboxgl.accessToken =
@@ -15,3 +17,6 @@ const mapMarkerDOM = document.createElement('div');
 mapMarkerDOM.className = ' mapMarker';
 
 new mapboxgl.Marker(mapMarkerDOM).setLngLat([-87.641, 41.895]).addTo(map);
+
+
+buildMarker('hotel', [-87.641, 41.895])
