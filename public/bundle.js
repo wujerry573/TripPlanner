@@ -112,11 +112,10 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _marker_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./marker.js */ \"./src/marker.js\");\n\n\n\n// console.log(buildMarker)\nvar mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken =\n\t'pk.eyJ1IjoidmVyeXNwcnkiLCJhIjoiY2ppbTN2c3dnMDAzbTNxbzJqN2xlOTlmcCJ9.La_7vHSyG2W6g0etA5YqXQ';\nvar map = new mapboxgl.Map({\n\tcontainer: document.getElementById('map'),\n\tstyle: 'mapbox://styles/mapbox/streets-v10',\n\tcenter: [-87.641, 41.895],\n\tzoom: 12\n});\n\nconst mapMarkerDOM = document.createElement('div');\nmapMarkerDOM.className = ' mapMarker';\n\nnew mapboxgl.Marker(mapMarkerDOM).setLngLat([-87.641, 41.895]).addTo(map);\n\n\nObject(_marker_js__WEBPACK_IMPORTED_MODULE_0__[\"buildMarker\"])('hotel', [-87.641, 41.895])\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const buildMarker = __webpack_require__(/*! ./marker.js */ \"./src/marker.js\");\n\n// console.log(buildMarker)\nconst mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken =\n\t'pk.eyJ1IjoidmVyeXNwcnkiLCJhIjoiY2ppbTN2c3dnMDAzbTNxbzJqN2xlOTlmcCJ9.La_7vHSyG2W6g0etA5YqXQ';\nconst map = new mapboxgl.Map({\n\tcontainer: document.getElementById('map'),\n\tstyle: 'mapbox://styles/mapbox/streets-v10',\n\tcenter: [-87.641, 41.895],\n\tzoom: 12\n});\n\nconst mapMarkerDOM = document.createElement('div');\nmapMarkerDOM.className = ' mapMarker';\n\nnew mapboxgl.Marker(mapMarkerDOM).setLngLat([-87.641, 41.895]).addTo(map);\n\nbuildMarker('hotel', [-87.641, 41.895]).addTo(map);\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -124,11 +123,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mar
 /*!***********************!*\
   !*** ./src/marker.js ***!
   \***********************/
-/*! exports provided: buildMarker */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"buildMarker\", function() { return buildMarker; });\n\n\nvar mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nconst iconURLs = {\n    hotels: \"http://i.imgur.com/D9574Cu.png)\",\n    restaurants: \"url(http://i.imgur.com/cqR6pUI.png)\",\n    activities: \"url(http://i.imgur.com/WbMOfMl.png)\"\n}\n\nconst buildMarker = (type, coords) => {\n\n  let mapMarkerDOM = document.createElement('div');\n  mapMarkerDOM.className = ' mapMarker';\n\n  if (type === 'hotel') {\n    mapMarkerDOM.style.backgroundImage = iconURLs.hotels\n  }\n  else if (type === 'restaurant') {\n    mapMarkerDOM.style.backgroundImage = iconURLs.restaurants\n  }\n  else {\n    mapMarkerDOM.style.backgroundImage = iconURLs.activities\n  }\n  return new mapboxgl.Marker(mapMarkerDOM).setLngLat(coords).addTo(map);\n}\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/marker.js?");
+eval("const mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nconst iconURLs = {\n\thotels: 'url(http://i.imgur.com/D9574Cu.png)',\n\trestaurants: 'url(http://i.imgur.com/cqR6pUI.png)',\n\tactivities: 'url(http://i.imgur.com/WbMOfMl.png)'\n};\n\nconst buildMarker = (type, coords) => {\n\tlet mapMarkerDOM = document.createElement('div');\n\tmapMarkerDOM.className = ' mapMarker';\n\n\tif (type === 'hotel') {\n\t\tmapMarkerDOM.style.backgroundImage = iconURLs.hotels;\n\t} else if (type === 'restaurant') {\n\t\tmapMarkerDOM.style.backgroundImage = iconURLs.restaurants;\n\t} else {\n\t\tmapMarkerDOM.style.backgroundImage = iconURLs.activities;\n\t}\n\treturn new mapboxgl.Marker(mapMarkerDOM).setLngLat(coords);\n};\n\nmodule.exports = buildMarker;\n\n\n//# sourceURL=webpack:///./src/marker.js?");
 
 /***/ })
 

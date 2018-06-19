@@ -1,12 +1,11 @@
-import { buildMarker } from './marker.js'
-
+const buildMarker = require('./marker.js');
 
 // console.log(buildMarker)
-var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+const mapboxgl = require('mapbox-gl');
 
 mapboxgl.accessToken =
 	'pk.eyJ1IjoidmVyeXNwcnkiLCJhIjoiY2ppbTN2c3dnMDAzbTNxbzJqN2xlOTlmcCJ9.La_7vHSyG2W6g0etA5YqXQ';
-var map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
 	container: document.getElementById('map'),
 	style: 'mapbox://styles/mapbox/streets-v10',
 	center: [-87.641, 41.895],
@@ -18,5 +17,4 @@ mapMarkerDOM.className = ' mapMarker';
 
 new mapboxgl.Marker(mapMarkerDOM).setLngLat([-87.641, 41.895]).addTo(map);
 
-
-buildMarker('hotel', [-87.641, 41.895])
+buildMarker('hotel', [-87.641, 41.895]).addTo(map);
