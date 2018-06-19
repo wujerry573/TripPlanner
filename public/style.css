@@ -9,6 +9,18 @@ body {
   background-color: coral;
 }
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.mapMarker {
+  height: 30px;
+  width: 32px;
+  background-image: url(http://i.imgur.com/WbMOfMl.png);
+}
+
 #map {
   height: 100vh;
   width: 100vw;

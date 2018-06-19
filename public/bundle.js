@@ -115,7 +115,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("console.log('heyeyeyeyeyeyeyeyeyye')\n\n\n\n\n\nvar mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken = 'pk.eyJ1IjoidmVyeXNwcnkiLCJhIjoiY2ppbTN2c3dnMDAzbTNxbzJqN2xlOTlmcCJ9.La_7vHSyG2W6g0etA5YqXQ';\nvar map = new mapboxgl.Map({\n  container: document.getElementById('map'),\n  style: 'mapbox://styles/mapbox/streets-v10'\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("console.log('heyeyeyeyeyeyeyeyeyye');\n\nvar mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmapboxgl.accessToken =\n\t'pk.eyJ1IjoidmVyeXNwcnkiLCJhIjoiY2ppbTN2c3dnMDAzbTNxbzJqN2xlOTlmcCJ9.La_7vHSyG2W6g0etA5YqXQ';\nvar map = new mapboxgl.Map({\n\tcontainer: document.getElementById('map'),\n\tstyle: 'mapbox://styles/mapbox/streets-v10',\n\tcenter: [-87.641, 41.895],\n\tzoom: 12\n});\n\nconst mapMarkerDOM = document.createElement('div');\nmapMarkerDOM.className = ' mapMarker';\n\nnew mapboxgl.Marker(mapMarkerDOM).setLngLat([-87.641, 41.895]).addTo(map);\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
